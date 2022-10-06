@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="4 E2E tests">
+    <test name="User gets created and can login with created credentials.">
+        <parameter name="testDataPath" value="src/test/resources/TestData/registerData.json"/>
+        <classes>
+            <class name="com.automation.project.scripts.ToiletAPITests">
+                <methods>
+                    <include name="checkIPExists"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!--    <test name="Logged-in user can view all accounts and then update one of them.">-->
+<!--        <parameter name="testDataPath" value="src/test/resources/TestData/loginData.json"/>-->
+<!--        <classes>-->
+<!--            <class name="com.automation.project.scripts.ToiletAPITests">-->
+<!--                <methods>-->
+<!--                    <include name="checkUserCanGetUserDataAndUpdate"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Logged-in user can try to delete one of accounts and then check that he did not actually delete it.">-->
+<!--        <parameter name="testDataPath" value="src/test/resources/TestData/loginData.json"/>-->
+<!--        <classes>-->
+<!--            <class name="com.automation.project.scripts.ToiletAPITests">-->
+<!--                <methods>-->
+<!--                    <include name="checkUserCanDeleteAnotherUser"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+</suite>
