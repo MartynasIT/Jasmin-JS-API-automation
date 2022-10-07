@@ -47,7 +47,6 @@ describe('Toilet API Suite', function() {
     expect(response.data.token.length).toEqual(10);
     console.log("The Call returned token with 10 symbols verification passed")
   });
-
 });
 
 afterAll(function() { 
