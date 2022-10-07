@@ -1,9 +1,10 @@
 const axios = require('axios');
-var url;
-var username;
-var password;
+let url;
+let username;
+let password;
 
 beforeAll(async function() { 
+  console.log("Toilet API Suite has started")
   const response = await axios.get('http://ptsv2.com/t/fu807-1554722621/post');
   username = response.data.username;
   password = response.data.password;
@@ -36,7 +37,7 @@ describe('Toilet API Suite', function() {
     console.log("Status code is 200 when crediantials are correct Verification Passed")
   });
 
-  it('API call returns an IP address which starts with 192.', async function() {
+  it('API call returns a valid IP address', async function() {
     const response = await axios.post(url, {}, {
       auth: {
         username: username,
@@ -45,8 +46,8 @@ describe('Toilet API Suite', function() {
     }).catch(function(error) {
       console.log(error);
     });
-    expect(response.data.ip).toContain('192.')
-    console.log("The Call returned a valid IP address that starts with 192. Verification Passed")
+    expect(require('net').isIPv4(response.data.ip)).toBeTrue();
+    console.log("The Call returned a valid IP address verification Passed")
   });
 
   it('API call returned token that has 10 symbols', async function() {
@@ -62,3 +63,7 @@ describe('Toilet API Suite', function() {
     console.log("The Call returned token with 10 symbols verification passed")
   });
 });
+
+afterAll(async function() { 
+  console.log("Toilet API Suite has finished")
+});  

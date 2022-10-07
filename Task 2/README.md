@@ -1,6 +1,6 @@
 # How To Run
 
- To run selenium Task CMD to project's location and use command: node tests/tesonet.js
+ To run selenium Task CMD to to task 2 folder and use command: node tests/tesonet.js
 
 # Warning
 
