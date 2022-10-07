@@ -9,7 +9,7 @@ beforeAll(async function() {
   username = response.data.username;
   password = response.data.password;
   url = response.data.targetUrl;
-});  
+});
 
 async function makeCallToApi(user, passwd) {
   const response = await axios.post(url, {}, {
@@ -28,7 +28,7 @@ describe('Toilet API Suite', function() {
       const error = await makeCallToApi('', '');
       expect(error.response.status).toEqual(401);
       console.log("Status code is 401 when crediantials are incorrect Verification Passed")
-    });
+  });
 
   it('API call should return 200 code when username and password are provided', async function() {
     const response = await makeCallToApi(username, password);
@@ -50,6 +50,6 @@ describe('Toilet API Suite', function() {
 
 });
 
-afterAll(async function() { 
+afterAll(function() { 
   console.log("Toilet API Suite has finished")
 });  
